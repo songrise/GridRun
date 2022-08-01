@@ -7,7 +7,7 @@ install via [pip](https://pip.pypa.io/en/stable/installing/)
 ```
 pip install grid_runner
 ```
-```
+
 ## Usage
 When you want to execute similar shell commands on a multi-gpu machine, you can use GridRunner to generate sh commands and run in parallel. 
 
