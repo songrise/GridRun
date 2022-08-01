@@ -1,20 +1,22 @@
-# GridRunner
-GridRunner is a simple tool that helps you to execute and manage similar shell commands. Originally, it is designed to perform grid-search of hyper-parameter in deep learning experiments. However, it can be used for other purposes as well. 
+# ShellRunner
+ShellRunner is a simple tool that helps you to execute and manage similar shell commands. Originally, it is designed to perform grid-search of hyper-parameter in deep learning experiments. However, it can be used for other purposes as well. 
 
 
 ## Installation
 install via [pip](https://pip.pypa.io/en/stable/installing/)
 ```
-pip install grid_runner
+pip install shell_runner
 ```
 
 ## Usage
-When you want to execute similar shell commands on a multi-gpu machine, you can use GridRunner to generate sh commands and run in parallel. 
+When you want to execute similar shell commands on a multi-gpu machine, you can use ShellRunner to generate sh commands and run in parallel. 
 
 Consider a simple use case, you want to find the best learning rate, you can use the following command:
 
 ```Python
-runner = GridRunner(log_name="lr_search")
+from shell_runner.runner import Runner
+
+runner = Runner(log_name="lr_search")
 
 exp_name = ["1e-3","1e-2","1e-1","1","10","100"]
 lr = [0.001, 0.01, 0.1, 1, 10, 100]
@@ -45,4 +47,4 @@ Grid runner will log the running status as well as hparams to log directory. For
 This allows you to easily analyze the running status for each of hte experiments, as well as reproducing the experiment.
 
 ## Others
-GridRunner is written in a extremely simple way (~100 lines). It is originally a custom script that I write in a hour, after finding it is tedious to execute batches of jobs manually. I will add more features later. Also, if you find any bugs or have any suggestions, please open an issue.
+ShellRunner is written in a extremely simple way (~100 lines). It is originally a custom script that I write in a hour, after finding it is tedious to execute batches of jobs manually. I will add more features later. Also, if you find any bugs or have any suggestions, please open an issue.

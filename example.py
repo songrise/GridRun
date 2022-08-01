@@ -1,6 +1,6 @@
-from grid_runner.runner import GridRunner
+from shell_runner.runner import Runner
 
-run = GridRunner("example_run")
+run = Runner("example_run")
 args = ["hello", "world"]
 lr = ["1e-3", "1e-4"]
 

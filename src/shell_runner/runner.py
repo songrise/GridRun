@@ -13,7 +13,7 @@ import datetime
 import json
 
 
-class GridRunner():
+class Runner():
     """helper class to execute sh scripts"""
 
     def __init__(self, log_name=None, log_main: bool = True) -> None:
