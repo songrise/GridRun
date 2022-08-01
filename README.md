@@ -1,6 +1,13 @@
 # GridRunner
 GridRunner is a simple tool that helps you to execute and manage similar shell commands. Originally, it is designed to perform grid-search of hyper-parameter in deep learning experiments. However, it can be used for other purposes as well. 
 
+
+## Installation
+install via [pip](https://pip.pypa.io/en/stable/installing/)
+```
+pip install grid_runner
+```
+```
 ## Usage
 When you want to execute similar shell commands on a multi-gpu machine, you can use GridRunner to generate sh commands and run in parallel. 
 

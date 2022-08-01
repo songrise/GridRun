@@ -1,13 +1,13 @@
-from src.grid_runner_songrise.runner import GridRunner
+from grid_runner.runner import GridRunner
 
-runner = GridRunner("example_run")
+run = GridRunner("example_run")
 args = ["hello", "world"]
 lr = ["1e-3", "1e-4"]
 
 template = "nohup python example/some_train_code.py --name {} --lr {}"
 train_args = [args, lr]
 
-train_instruction = runner.gen_instruction(
+train_instruction = run.gen_instruction(
     template, train_args, suffix="train")
 
-runner.run(["example_train"], train_instruction, gpus=[4, 5])
+run.run(["example_train"], train_instruction, gpus=[4, 5])
