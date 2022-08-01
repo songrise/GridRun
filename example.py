@@ -1,4 +1,4 @@
-from shell_runner.runner import Runner
+from grid_run.runner import Runner
 
 run = Runner("example_run")
 args = ["hello", "world"]
