@@ -1,4 +1,4 @@
-from runner import GridRunner
+from src.grid_runner_songrise.runner import GridRunner
 
 runner = GridRunner("example_run")
 args = ["hello", "world"]
