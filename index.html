@@ -1,0 +1,117 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><title>Python: module runner</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head><body bgcolor="#f0f0f8">
+
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="heading">
+<tr bgcolor="#7799ee">
+<td valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong>runner</strong></big></big></font></td
+><td align=right valign=bottom
+><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="file:/Users/songrise/Documents_local/Github/GridRunner/src/grid_run/runner.py">/Users/songrise/Documents_local/Github/GridRunner/src/grid_run/runner.py</a></font></td></tr></table>
+    <p><tt>#&nbsp;-*-&nbsp;coding&nbsp;:&nbsp;utf-8&nbsp;-*-<br>
+#&nbsp;@FileName&nbsp;&nbsp;:&nbsp;run_exp.py<br>
+#&nbsp;@Author&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;Ruixiang&nbsp;JIANG&nbsp;(Songrise)<br>
+#&nbsp;@Github&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;<a href="https://github.com/songrise">https://github.com/songrise</a><br>
+#&nbsp;@Description:&nbsp;Flyweight&nbsp;tool&nbsp;to&nbsp;manage&nbsp;shell&nbsp;commands.</tt></p>
+<p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#aa55cc">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Modules</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#aa55cc"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><table width="100%" summary="list"><tr><td width="25%" valign=top><a href="datetime.html">datetime</a><br>
+<a href="json.html">json</a><br>
+</td><td width="25%" valign=top><a href="numpy.html">numpy</a><br>
+<a href="os.html">os</a><br>
+</td><td width="25%" valign=top><a href="time.html">time</a><br>
+</td><td width="25%" valign=top></td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ee77aa">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Classes</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#ee77aa"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl>
+<dt><font face="helvetica, arial"><a href="builtins.html#object">builtins.object</a>
+</font></dt><dd>
+<dl>
+<dt><font face="helvetica, arial"><a href="runner.html#Runner">Runner</a>
+</font></dt></dl>
+</dd>
+</dl>
+ <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="Runner">class <strong>Runner</strong></a>(<a href="builtins.html#object">builtins.object</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt><a href="#Runner">Runner</a>(log_name=None,&nbsp;log_main:&nbsp;bool&nbsp;=&nbsp;True)&nbsp;-&amp;gt;&nbsp;None<br>
+&nbsp;<br>
+helper&nbsp;class&nbsp;to&nbsp;execute&nbsp;sh&nbsp;scripts<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%">Methods defined here:<br>
+<dl><dt><a name="Runner-__init__"><strong>__init__</strong></a>(self, log_name=None, log_main: bool = True) -&gt; None</dt><dd><tt>Initialize&nbsp;the&nbsp;runner.<br>
+&nbsp;<br>
+Parameters:<br>
+----------<br>
+log_name&nbsp;:&nbsp;str,&nbsp;the&nbsp;name&nbsp;of&nbsp;the&nbsp;grid&nbsp;experiment.<br>
+log_main&nbsp;:&nbsp;bool,&nbsp;if&nbsp;True,&nbsp;write&nbsp;log&nbsp;to&nbsp;main&nbsp;log&nbsp;file.</tt></dd></dl>
+
+<dl><dt><a name="Runner-__str__"><strong>__str__</strong></a>(self) -&gt; str</dt><dd><tt>Return&nbsp;str(self).</tt></dd></dl>
+
+<dl><dt><a name="Runner-compose"><strong>compose</strong></a>(self, template: str, args: List[List], dump_param: Optional[bool] = True, suffix: Optional[str] = None) -&gt; List[str]</dt><dd><tt>Generate&nbsp;a&nbsp;list&nbsp;of&nbsp;instruction&nbsp;from&nbsp;template&nbsp;and&nbsp;args.<br>
+&nbsp;<br>
+Parameters:<br>
+----------<br>
+template&nbsp;:&nbsp;str,&nbsp;the&nbsp;template&nbsp;of&nbsp;instruction&nbsp;in&nbsp;the&nbsp;form&nbsp;of&nbsp;format&nbsp;string,&nbsp;specify&nbsp;the&nbsp;blank&nbsp;as&nbsp;{}.<br>
+args&nbsp;:&nbsp;List[List],&nbsp;the&nbsp;list&nbsp;of&nbsp;arguments&nbsp;for&nbsp;each&nbsp;instruction,&nbsp;must&nbsp;much&nbsp;the&nbsp;number&nbsp;of&nbsp;{}&nbsp;in&nbsp;template.<br>
+dump_param&nbsp;:&nbsp;bool,&nbsp;Optional.&nbsp;if&nbsp;True,&nbsp;dump&nbsp;the&nbsp;args&nbsp;and&nbsp;template&nbsp;to&nbsp;a&nbsp;file.<br>
+suffix&nbsp;:&nbsp;str,&nbsp;the&nbsp;suffix&nbsp;for&nbsp;the&nbsp;dumped&nbsp;file.<br>
+&nbsp;<br>
+Returns:<br>
+----------<br>
+instructions&nbsp;:&nbsp;list,&nbsp;the&nbsp;list&nbsp;of&nbsp;instructions&nbsp;that&nbsp;are&nbsp;ready&nbsp;to&nbsp;run.</tt></dd></dl>
+
+<dl><dt><a name="Runner-load"><strong>load</strong></a>(self, file_dir: str)</dt><dd><tt>Load&nbsp;dumped&nbsp;args&nbsp;or&nbsp;templates&nbsp;from&nbsp;file.<br>
+Parameters:<br>
+----------<br>
+file_dir:&nbsp;str,&nbsp;the&nbsp;path&nbsp;to&nbsp;the&nbsp;json&nbsp;file.<br>
+&nbsp;<br>
+Returns:<br>
+----------<br>
+content:&nbsp;list&nbsp;or&nbsp;str,&nbsp;the&nbsp;content&nbsp;of&nbsp;the&nbsp;file.</tt></dd></dl>
+
+<dl><dt><a name="Runner-log"><strong>log</strong></a>(self, content: str) -&gt; None</dt><dd><tt>Write&nbsp;log&nbsp;to&nbsp;the&nbsp;main&nbsp;log&nbsp;file.</tt></dd></dl>
+
+<dl><dt><a name="Runner-run"><strong>run</strong></a>(self, exp_names: List[str], instructions: List[str], gpus: List[int] = None, interval_time: int = 0, **kwargs: dict) -&gt; None</dt><dd><tt>execute&nbsp;experiments&nbsp;in&nbsp;parallel,&nbsp;save&nbsp;log&nbsp;to&nbsp;log_name<br>
+&nbsp;<br>
+Parameters:<br>
+----------<br>
+exp_name&nbsp;:&nbsp;List[str],&nbsp;the&nbsp;name&nbsp;for&nbsp;each&nbsp;experiment<br>
+instructions&nbsp;:&nbsp;List[str],&nbsp;the&nbsp;command&nbsp;line&nbsp;instruction&nbsp;for&nbsp;each&nbsp;experiment<br>
+gpus&nbsp;:&nbsp;List[int],&nbsp;the&nbsp;gpu&nbsp;id&nbsp;for&nbsp;each&nbsp;experiment,&nbsp;if&nbsp;None,&nbsp;assume&nbsp;use&nbsp;CUDA&nbsp;0.<br>
+interval_time&nbsp;:&nbsp;int,&nbsp;interval&nbsp;time&nbsp;(in&nbsp;minutes)&nbsp;between&nbsp;experiments.&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Only&nbsp;useful&nbsp;when&nbsp;number&nbsp;of&nbsp;experiments&nbsp;is&nbsp;larger&nbsp;than&nbsp;avaliable&nbsp;gpu.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Notice,&nbsp;it&nbsp;assume&nbsp;the&nbsp;gpu&nbsp;is&nbsp;available&nbsp;after&nbsp;the&nbsp;previous&nbsp;experiment.</tt></dd></dl>
+
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+</td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#55aa55">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Data</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#55aa55"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><strong>List</strong> = typing.List<br>
+<strong>Optional</strong> = typing.Optional</td></tr></table>
+</body></html>
